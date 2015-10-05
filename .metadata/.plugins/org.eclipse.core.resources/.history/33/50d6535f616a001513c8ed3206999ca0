@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+
+public class Interpretor {
+
+	public static <T> void main(String[] args)
+	{
+		System.out.println("Working!");
+		
+		ArrayList<T> stuff = new ArrayList<T>();
+		stuff.add((T)"things");
+		
+		System.out.println("First Element: " + stuff.get(0));
+	}
+}

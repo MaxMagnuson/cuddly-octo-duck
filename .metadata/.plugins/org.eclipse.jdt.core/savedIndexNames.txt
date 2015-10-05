@@ -1,0 +1,10 @@
+INDEX VERSION 1.126+C:\KittenKatastrophe\cuddly-octo-duck\.metadata\.plugins\org.eclipse.jdt.core
+3575536431.index
+3328984324.index
+3309799483.index
+150054650.index
+2867215223.index
+4056960953.index
+1856146162.index
+3251288570.index
+944052934.index

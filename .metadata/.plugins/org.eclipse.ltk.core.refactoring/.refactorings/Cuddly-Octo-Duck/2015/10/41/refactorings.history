@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;IStackObject.java&apos; to &apos;Cuddly-Octo-Duck/src/Functions&apos;&#x0D;&#x0A;- Original project: &apos;Cuddly-Octo-Duck&apos;&#x0D;&#x0A;- Destination element: &apos;Cuddly-Octo-Duck/src/Functions&apos;&#x0D;&#x0A;- Original element: &apos;IStackObject.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;Functions" element1="/src&lt;{IStackObject.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1443937053813" units="1" version="1.0"/>
+</session>

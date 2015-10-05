@@ -1,0 +1,20 @@
+package Functions;
+
+import java.util.ArrayList;
+
+public class Add implements IStackObject {
+	private String input;
+	
+	public Add(String input)
+	{
+		this.input = input;
+	}
+	
+	@Override
+	public ArrayList<Double> Process()
+	{
+		ArrayList<Double> output = new ArrayList<Double>();
+		
+		return output;
+	}
+}

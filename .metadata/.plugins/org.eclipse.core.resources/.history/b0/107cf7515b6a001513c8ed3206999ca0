@@ -1,0 +1,7 @@
+package Functions;
+import java.util.ArrayList;
+
+
+public interface IStackObject <T>{
+	ArrayList<T> Process();
+}
