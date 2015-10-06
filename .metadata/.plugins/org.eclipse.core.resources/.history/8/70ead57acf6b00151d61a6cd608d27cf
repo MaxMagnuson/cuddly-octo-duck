@@ -1,0 +1,20 @@
+package dataTypes;
+
+import java.util.ArrayList;
+
+public class Value implements IDataType {
+	String value;
+	
+	public Value(String val)
+	{
+		this.value = val;
+	}
+	
+	public ArrayList<String> evalutate()
+	{
+		ArrayList<String> output = new ArrayList<String>();
+		output.add(this.value);
+		
+		return output;
+	}
+}

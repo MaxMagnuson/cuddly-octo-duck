@@ -1,0 +1,21 @@
+package dataTypes;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+public class DataTypeTests {
+
+	public void CollectionEvaluate()
+	{
+		ArrayList<String> expected = new ArrayList<String>();
+		expected.add("1");
+		expected.add("2");
+		expected.add("3");
+		expected.add("4");
+		
+		String input = "[1 2    3   4]";
+		IDataType test = dataTypes.Collection(input);
+	}
+}
