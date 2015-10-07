@@ -17,58 +17,10 @@ public class Interpretor {
 		String line;
 		while(!(line = scan.nextLine()).equals("end"))
 		{	
-			String fn = parseFun(line);
-			ArrayList<String> params = parseColl(line);
-			IStackObject function = funMap.get(fn);
-			String result = function.Process(params).get(0).toString();
+			dataTypes.IDataType fun = new dataTypes.Function(line);
+			ArrayList<String> result = fun.evaluate();
 
-			System.out.print("-> " + result);
+			System.out.print("-> " + result.get(0));
 		}
-	}
-
-	private static String parseFun(String input)
-	{
-		String output = "";
-		int index = 1;
-		char cur = ' ';
-		while((cur = input.charAt(index++)) != ' ')
-		{
-			output += cur;
-		}
-		return output;
-	}
-
-	private static ArrayList<String> parseColl(String input)
-	{
-		ArrayList<String> output = new ArrayList<String>();
-		int index = 0;
-		char cur;
-		//Get To Args
-		while((cur = input.charAt(index++)) != ' ')
-		{
-		}
-
-		String nextEle = "";
-		while(index < input.length())
-		{
-			cur = input.charAt(index);
-			if(cur == ' ' && nextEle.length() > 0)
-			{
-				output.add(nextEle);
-				nextEle = "";
-			} 
-			else if(Character.isDigit(cur))
-			{
-				nextEle += cur;
-			}
-			index++;
-		}
-		if(nextEle.length() > 0)
-		{
-			output.add(nextEle);
-		}
-
-
-		return output;
 	}
 }

@@ -10,6 +10,11 @@ public class Value implements IDataType {
 		this.value = val;
 	}
 	
+	public String getType()
+	{
+		return "Value";
+	}
+	
 	@Override
 	public ArrayList<String> evaluate()
 	{

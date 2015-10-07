@@ -1,0 +1,74 @@
+package sharedMethods;
+import java.util.ArrayList;
+import java.util.zip.DataFormatException;
+
+import dataTypes.IDataType;
+
+public class Parse {
+
+	public static ArrayList<IDataType> stringToDataTypes(String input) throws DataFormatException
+	{
+		ArrayList<IDataType> output = new ArrayList<IDataType>();
+		int index = 1;
+		char cur;
+		//Get past function name
+		while((cur = input.charAt(index++)) != ' '){}
+		
+		int bound = input.length() - 1;
+		String nextElement = "";
+		while(index < bound)
+		{
+			cur = input.charAt(index);
+			if(cur == ' ')
+			{
+				index++;
+			}
+			else if(cur == '[')
+			{
+				if(nextElement.length() > 0)
+				{
+					throw new DataFormatException("There are non white space characters preceding a collection");
+				}
+				else
+				{
+					nextElement += cur;
+				}
+				while((cur = input.charAt(++index)) != ']')
+				{
+					nextElement += cur;
+				}
+				nextElement += input.charAt(index++);
+				IDataType temp = new dataTypes.Collection(nextElement);
+				output.add(temp);
+				nextElement = "";
+			}
+			else if(cur == '(')
+		}
+		
+		return output;
+	}
+	
+	private static IDataType captureElement(String input, int index, char delimiter)
+	{
+		String ele = "";
+		index--;
+		char cur;
+		while((cur = input.charAt(++index)) != delimiter)
+		{
+			ele += cur;
+		}
+		ele += input.charAt(index);
+		
+		IDataType temp == new dataTypes.Collection(ele);
+		if(delimiter == ']')
+		{
+			temp = new dataTypes.Collection(ele);
+		}
+		else if(delimiter == ')')
+		{
+			temp = new dataTypes.Function(ele);
+		}
+		
+		return temp;
+	}
+}

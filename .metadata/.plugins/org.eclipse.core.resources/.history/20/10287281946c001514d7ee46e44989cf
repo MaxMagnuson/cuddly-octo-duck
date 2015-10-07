@@ -1,0 +1,88 @@
+package Functions;
+
+import dataTypes.IDataType;
+import java.util.ArrayList;
+
+public class Add implements IStackObject {
+	
+	public Add()
+	{
+		
+	}
+	
+	@Override
+	public ArrayList<String> Process(ArrayList<IDataType> input)
+	{
+		ArrayList<String> output = new ArrayList<String>();
+		
+		ArrayList<String> evalParams = new ArrayList<String>();
+		ArrayList<IDataType> tempParams = new ArrayList<IDataType>();
+		for(IDataType d : input)
+		{
+			String type = d.getType();
+			if(type.equals("Function")) 
+			{
+				tempParams.add(d);
+			}
+			else
+			{
+				ArrayList<String> tempVal = d.evaluate();
+				evalParams.addAll(tempVal);
+			}
+		}
+		
+		while(tempParams.size() > 0)
+		{
+			IDataType tempData = tempParams.remove(tempParams.size() - 1);
+			ArrayList<String> tempStrings = tempData.evaluate();
+			///////////////////////////////////////////////////////////////
+			//Does not currently handle collections returned from functions
+			///////////////////////////////////////////////////////////////
+			for(String s : tempStrings)
+			{
+				if(s.startsWith("("))
+				{
+					ArrayList<IDataType> tempDataList = sharedMethods.Parse.stringToDataTypes(s);
+					for(IDataType d : tempDataList)
+					{
+						if(d.getType().equals("Function"))
+						{
+							tempParams.add(d);
+						}
+						else
+						{
+							ArrayList<String> tempVal = d.evaluate();
+							evalParams.addAll(tempVal);
+						}
+					}	
+				}
+				else
+				{
+					evalParams.add(s);
+				}
+			}
+		}
+		
+		
+		
+		
+		for(dataTypes.IDataType param : input)
+		{
+			ArrayList<String> temp = param.evaluate();
+			for(String tempParam : temp)
+			{
+				evalParams.add(tempParam);
+			}
+		}
+		
+		double total = 0;
+		int bound = evalParams.size();
+		for(int i = 0; i < bound; i++)
+		{
+			total += Double.parseDouble(evalParams.get(i));
+		}
+		
+		output.add(total + "");
+		return output;
+	}
+}

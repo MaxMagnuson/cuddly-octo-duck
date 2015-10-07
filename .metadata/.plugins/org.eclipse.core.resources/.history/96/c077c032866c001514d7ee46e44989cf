@@ -1,0 +1,17 @@
+package dataTypes;
+
+import java.util.ArrayList;
+
+public class Function implements IDataType {
+
+	private String funName;
+	private ArrayList<IDataType> params;
+	@Override
+	public ArrayList<String> evaluate() {
+		Functions.IStackObject fun = Functions.BuiltIn.getFunction.get(funName);
+		ArrayList<String> output = fun.Process(params);
+		return output;
+	}
+
+	
+}

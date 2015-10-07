@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="Functions.IStackObject"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.zip.DataFormatException"/>
+<fullyQualifiedTypeName name="dataTypes.Value"/>
+<fullyQualifiedTypeName name="dataTypes.Function"/>
+<fullyQualifiedTypeName name="Functions.BuiltIn"/>
 <fullyQualifiedTypeName name="Functions.Add"/>
+<fullyQualifiedTypeName name="dataTypes.Collection"/>
+<fullyQualifiedTypeName name="dataTypes.IDataType"/>
+<fullyQualifiedTypeName name="sharedMethods.Parse"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
 </qualifiedTypeNameHistroy>

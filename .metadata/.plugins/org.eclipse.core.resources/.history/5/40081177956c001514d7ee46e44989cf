@@ -1,0 +1,68 @@
+package sharedMethods;
+import java.util.ArrayList;
+import java.util.zip.DataFormatException;
+
+import dataTypes.IDataType;
+
+public class Parse {
+
+	public static ArrayList<IDataType> stringToDataTypes(String input)
+	{
+		ArrayList<IDataType> output = new ArrayList<IDataType>();
+		int index = 1;
+		char cur;
+		//Get past function name
+		while((cur = input.charAt(index++)) != ' '){}
+		
+		int bound = input.length() - 1;
+		while(index < bound)
+		{
+			cur = input.charAt(index);
+			if(cur == ' ')
+			{
+				index++;
+			}
+			else if(cur == '[')
+			{
+				String result = captureElement(input, index, ']');
+				IDataType temp = new dataTypes.Collection(result);
+				output.add(temp);
+				index += result.length();
+			}
+			else if(cur == '(')
+			{
+				String result = captureElement(input, index, ')');
+				System.out.println("Result: " + result);
+				IDataType temp = new dataTypes.Function(result);
+				output.add(temp);
+				index += result.length();
+			}
+			else
+			{
+				String nextElement = "";
+				while((cur = input.charAt(index++)) != ' ' && cur != ')')
+				{
+					nextElement += cur;
+				}
+				IDataType temp = new dataTypes.Value(nextElement);
+				output.add(temp);
+			}
+		}
+		
+		return output;
+	}
+	
+	private static String captureElement(String input, int index, char delimiter)
+	{
+		String ele = "";
+		index--;
+		char cur;
+		while((cur = input.charAt(++index)) != delimiter)
+		{
+			ele += cur;
+		}
+		ele += input.charAt(index);
+		
+		return ele;
+	}
+}

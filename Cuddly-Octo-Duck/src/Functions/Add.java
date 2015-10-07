@@ -1,5 +1,6 @@
 package Functions;
 
+import dataTypes.IDataType;
 import java.util.ArrayList;
 
 public class Add implements IStackObject {
@@ -10,17 +11,55 @@ public class Add implements IStackObject {
 	}
 	
 	@Override
-	public ArrayList<String> Process(ArrayList<dataTypes.IDataType> input)
+	public ArrayList<String> Process(ArrayList<IDataType> input)
 	{
 		ArrayList<String> output = new ArrayList<String>();
 		
 		ArrayList<String> evalParams = new ArrayList<String>();
-		for(dataTypes.IDataType param : input)
+		ArrayList<IDataType> tempParams = new ArrayList<IDataType>();
+		for(IDataType d : input)
 		{
-			ArrayList<String> temp = param.evaluate();
-			for(String tempParam : temp)
+			String type = d.getType();
+			if(type.equals("Function")) 
 			{
-				evalParams.add(tempParam);
+				tempParams.add(d);
+			}
+			else
+			{
+				ArrayList<String> tempVal = d.evaluate();
+				evalParams.addAll(tempVal);
+			}
+		}
+		
+		while(tempParams.size() > 0)
+		{
+			IDataType tempData = tempParams.remove(tempParams.size() - 1);
+			ArrayList<String> tempStrings = tempData.evaluate();
+			///////////////////////////////////////////////////////////////
+			//Does not currently handle collections returned from functions
+			///////////////////////////////////////////////////////////////
+			for(String s : tempStrings)
+			{
+				if(s.startsWith("("))
+				{
+					ArrayList<IDataType> tempDataList = sharedMethods.Parse.stringToDataTypes(s);
+					for(IDataType d : tempDataList)
+					{
+						if(d.getType().equals("Function"))
+						{
+							tempParams.add(d);
+						}
+						else
+						{
+							ArrayList<String> tempVal = d.evaluate();
+							evalParams.addAll(tempVal);
+						}
+					}	
+				}
+				else
+				{
+					evalParams.add(s);
+				}
 			}
 		}
 		

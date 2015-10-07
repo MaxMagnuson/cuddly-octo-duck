@@ -10,6 +10,11 @@ public class Collection implements IDataType {
 		this.value = val;
 	}
 	
+	public String getType()
+	{
+		return "Collection";
+	}
+	
 	@Override
 	public ArrayList<String> evaluate() {
 		ArrayList<String> output = new ArrayList<String>();
