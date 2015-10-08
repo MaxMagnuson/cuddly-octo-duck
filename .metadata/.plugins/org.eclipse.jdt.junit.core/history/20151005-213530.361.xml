@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testrun name="Rerun dataTypes.DataTypeTests.CollectionEvaluate" project="Cuddly-Octo-Duck" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testcase name="CollectionEvaluate" classname="dataTypes.DataTypeTests" time="0.0"/>
-</testrun>
