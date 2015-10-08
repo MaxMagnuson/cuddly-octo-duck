@@ -10,7 +10,7 @@
 <fullyQualifiedTypeName name="Functions.BuiltIn"/>
 <fullyQualifiedTypeName name="Functions.Add"/>
 <fullyQualifiedTypeName name="dataTypes.Collection"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="dataTypes.IDataType"/>
 <fullyQualifiedTypeName name="sharedMethods.Parse"/>
-<fullyQualifiedTypeName name="java.util.Stack"/>
 </qualifiedTypeNameHistroy>

@@ -8,8 +8,5 @@ public class BuiltIn {
 	static 
 	{
 		getFunction.put("+", new Add());
-		getFunction.put("-", new Subtract());
-		getFunction.put("*", new Multiply());
-		getFunction.put("/", new Divide());
 	}
 }

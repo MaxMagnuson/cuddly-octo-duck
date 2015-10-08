@@ -3,9 +3,9 @@ package Functions;
 import dataTypes.IDataType;
 import java.util.ArrayList;
 
-public class Add implements IStackObject {
+public class Subtract implements IStackObject {
 	
-	public Add()
+	public Subtract()
 	{
 		
 	}
@@ -17,11 +17,11 @@ public class Add implements IStackObject {
 		
 		ArrayList<String> evalParams = sharedMethods.Parse.evaluateParams(input);
 		
-		double total = 0;
+		double total = Double.parseDouble(evalParams.get(0));
 		int bound = evalParams.size();
-		for(int i = 0; i < bound; i++)
+		for(int i = 1; i < bound; i++)
 		{
-			total += Double.parseDouble(evalParams.get(i));
+			total -= Double.parseDouble(evalParams.get(i));
 		}
 		
 		output.add(total + "");

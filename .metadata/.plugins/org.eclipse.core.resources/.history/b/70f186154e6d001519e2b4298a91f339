@@ -27,7 +27,7 @@ public class Function implements IDataType {
 		}
 		ArrayList<IDataType> params = sharedMethods.Parse.stringToDataTypes(value);
 		
-		Functions.IStackObject fun = Functions.BuiltIn.getFunction.get(funName);
+		Functions.IStackObject fun = new Functions.Add();//Functions.BuiltIn.getFunction.get(funName);
 		ArrayList<String> output = fun.Process(params);
 		return output;
 	}
