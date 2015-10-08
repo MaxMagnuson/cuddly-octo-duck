@@ -98,40 +98,4 @@ public class DataTypeTests {
 		
 		assertEquals(expected, result.get(0));	
 	}
-	
-	@Test
-	public void DivideFunction()
-	{
-		String expected = "4.0";
-		String input = "(/ 100 25)";
-		
-		dataTypes.IDataType fun = new dataTypes.Function(input);
-		ArrayList<String> result = fun.evaluate();
-		
-		assertEquals(expected, result.get(0));	
-	}
-	
-	@Test
-	public void DivideFunctionNested()
-	{
-		String expected = "2.0";
-		String input = "(/ 100 25 (/ 16 8))";
-		
-		dataTypes.IDataType fun = new dataTypes.Function(input);
-		ArrayList<String> result = fun.evaluate();
-		
-		assertEquals(expected, result.get(0));	
-	}
-	
-	@Test
-	public void ManyArithmetic()
-	{
-		String expected = "5.0";
-		String input = "(/ 100 (* 4 (+ 3 (- 98 96))))";
-		
-		dataTypes.IDataType fun = new dataTypes.Function(input);
-		ArrayList<String> result = fun.evaluate();
-		
-		assertEquals(expected, result.get(0));	
-	}
 }
