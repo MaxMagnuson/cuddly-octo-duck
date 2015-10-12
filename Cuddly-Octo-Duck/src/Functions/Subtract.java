@@ -5,11 +5,6 @@ import java.util.ArrayList;
 
 public class Subtract implements IStackObject {
 	
-	public Subtract()
-	{
-		
-	}
-	
 	@Override
 	public ArrayList<String> Process(ArrayList<IDataType> input)
 	{

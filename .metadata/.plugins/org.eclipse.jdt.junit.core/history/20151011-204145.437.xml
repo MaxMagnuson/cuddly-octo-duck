@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="DataTypeTests" project="Cuddly-Octo-Duck" tests="13" started="13" failures="0" errors="0" ignored="0">
+  <testsuite name="dataTypes.DataTypeTests" time="0.001">
+    <testcase name="SubtractFunction" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="DivideFunctionNested" classname="dataTypes.DataTypeTests" time="0.001"/>
+    <testcase name="DivideFunction" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="SubtractFunctionNested" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="MultiplyFunction" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="CollectionEvaluate" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="MultiplyFunctionNested" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="AddFunctionNested" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="ManyArithmetic" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="EqualsAreEqual" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="EqualsNumbers" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="EqualsStrings" classname="dataTypes.DataTypeTests" time="0.0"/>
+    <testcase name="AddFunction" classname="dataTypes.DataTypeTests" time="0.0"/>
+  </testsuite>
+</testrun>

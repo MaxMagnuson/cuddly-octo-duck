@@ -1,0 +1,14 @@
+
+public class Playground {
+	public static void main(String[] args)
+	{
+		String nOne = "0.01234";
+		String nTwo = "0.02234";
+		
+		byte[] one = nOne.getBytes();
+		for(byte b : one)
+		{
+			System.out.println("Byte: " + b);
+		}
+	}
+}

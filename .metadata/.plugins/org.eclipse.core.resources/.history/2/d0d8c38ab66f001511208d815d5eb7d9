@@ -1,0 +1,11 @@
+
+public class Playground {
+	public static void main(String[] args)
+	{
+		String nOne = "0.01234";
+		String nTwo = "0.02234";
+		
+		nOne.
+		System.out.println(nOne - nTwo);
+	}
+}

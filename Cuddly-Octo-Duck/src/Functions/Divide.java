@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import dataTypes.IDataType;
 
 public class Divide implements IStackObject {
-	public Divide()
-	{
-		
-	}
 	
 	@Override
 	public ArrayList<String> Process(ArrayList<IDataType> input)

@@ -11,5 +11,6 @@ public class BuiltIn {
 		getFunction.put("-", new Subtract());
 		getFunction.put("*", new Multiply());
 		getFunction.put("/", new Divide());
+		getFunction.put("=", new Equals());
 	}
 }

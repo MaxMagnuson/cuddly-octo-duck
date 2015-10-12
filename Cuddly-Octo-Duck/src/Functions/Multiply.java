@@ -4,11 +4,6 @@ import java.util.ArrayList;
 
 public class Multiply implements IStackObject {
 	
-	public Multiply()
-	{
-		
-	}
-	
 	@Override
 	public ArrayList<String> Process(ArrayList<IDataType> input)
 	{

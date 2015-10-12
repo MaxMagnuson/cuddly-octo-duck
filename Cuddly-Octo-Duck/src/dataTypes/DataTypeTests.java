@@ -134,4 +134,43 @@ public class DataTypeTests {
 		
 		assertEquals(expected, result.get(0));	
 	}
+	
+	@Test
+	public void EqualsAreEqual()
+	{
+		String expected = "true";
+		String input = "(= (+ 2 4) (* 2 3))";
+		
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void EqualsStrings()
+	{
+		String expected = "true";
+		String input = "(= stuff stuff)";
+		
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void EqualsNumbers()
+	{
+		String expected = "true";
+		String input = "(= 42 42)";
+		
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
 }

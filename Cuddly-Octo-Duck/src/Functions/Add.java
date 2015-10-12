@@ -5,11 +5,6 @@ import java.util.ArrayList;
 
 public class Add implements IStackObject {
 	
-	public Add()
-	{
-		
-	}
-	
 	@Override
 	public ArrayList<String> Process(ArrayList<IDataType> input)
 	{

@@ -1,0 +1,150 @@
+package dataTypes;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+public class DataTypeTests {
+
+	@Test
+	public void CollectionEvaluate()
+	{
+		ArrayList<String> expected = new ArrayList<String>();
+		expected.add("1");
+		expected.add("2");
+		expected.add("3");
+		expected.add("4");
+		expected.add("23");
+		
+		String input = "[1 2    3   4  23]";
+		IDataType test = new Collection(input);
+		ArrayList<String> output = test.evaluate();
+		
+		for(int i = 0; i < expected.size(); i++)
+		{
+			assertEquals(expected.get(i), output.get(i));
+		}
+	}
+	
+	@Test
+	public void AddFunction()
+	{
+		String expected = "4.0";
+		String input = "(+ 2 2)";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void AddFunctionNested()
+	{
+		String expected = "6.0";
+		String input = "(+ 2 2 (+ 1 1))";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void MultiplyFunction()
+	{
+		String expected = "6.0";
+		String input = "(* 2 3)";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void MultiplyFunctionNested()
+	{
+		String expected = "36.0";
+		String input = "(* 2 3 (* 2 3))";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void SubtractFunction()
+	{
+		String expected = "5.0";
+		String input = "(- 20 15)";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void SubtractFunctionNested()
+	{
+		String expected = "4.0";
+		String input = "(- 20 15 (- 3 2))";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void DivideFunction()
+	{
+		String expected = "4.0";
+		String input = "(/ 100 25)";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void DivideFunctionNested()
+	{
+		String expected = "2.0";
+		String input = "(/ 100 25 (/ 16 8))";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void ManyArithmetic()
+	{
+		String expected = "5.0";
+		String input = "(/ 100 (* 4 (+ 3 (- 98 96))))";
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+	
+	@Test
+	public void EqualsAreEqual()
+	{
+		String expected = "true";
+		String input = "(= (+ 2 4) (* 2 3))";
+		
+		
+		dataTypes.IDataType fun = new dataTypes.Function(input);
+		ArrayList<String> result = fun.evaluate();
+		
+		assertEquals(expected, result.get(0));	
+	}
+}

@@ -40,9 +40,10 @@ public class Parse {
 			else
 			{
 				String nextElement = "";
-				while((cur = input.charAt(index++)) != ' ' && cur != ')')
+				while((cur = input.charAt(index)) != ' ' && cur != ')')
 				{
 					nextElement += cur;
+					index++;
 				}
 				IDataType temp = new dataTypes.Value(nextElement);
 				output.add(temp);
@@ -55,21 +56,23 @@ public class Parse {
 	private static String captureElement(String input, int index, char delimiter)
 	{
 		String ele = "";
-		index--;
+		index++;
 		char cur;
 		Stack delimStack = new Stack();
 		if(delimiter == ')')
 		{
 			delimStack.add('(');
+			ele += '(';
 		}
 		else
 		{
 			delimStack.add('[');
+			ele += '[';
 		}
 		
 		while(!delimStack.isEmpty())
 		{
-			cur = input.charAt(++index);
+			cur = input.charAt(index);
 			if(cur == delimiter)
 			{
 				delimStack.pop();
@@ -83,8 +86,8 @@ public class Parse {
 				delimStack.add('[');
 			}
 			ele += cur;
+			index++;
 		}
-		ele += input.charAt(index);
 		
 		return ele;
 	}
