@@ -12,7 +12,5 @@ public class BuiltIn {
 		getFunction.put("*", new Multiply());
 		getFunction.put("/", new Divide());
 		getFunction.put("=", new Equals());
-		getFunction.put(">", new GreaterThan());
-		getFunction.put("<", new LessThan());
 	}
 }

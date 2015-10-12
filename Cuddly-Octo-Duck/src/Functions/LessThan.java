@@ -2,11 +2,10 @@ package Functions;
 
 import java.util.ArrayList;
 
+import dataTypes.IDataType;
 import sharedMethods.Constants;
 
-import dataTypes.IDataType;
-
-public class Equals implements IStackObject {
+public class LessThan implements IStackObject {
 
 	@Override
 	public ArrayList<String> Process(ArrayList<IDataType> input) {
@@ -18,7 +17,11 @@ public class Equals implements IStackObject {
 			//implement error stuff
 		}
 		
-		if(evalParams.get(0).equals(evalParams.get(1)))
+		double paramOne = Double.parseDouble(evalParams.get(0));
+		double paramTwo = Double.parseDouble(evalParams.get(1));
+		double diff = paramOne - paramTwo;
+		
+		if(diff < 0)
 		{
 			output.add(Constants.TRUE);
 		}
@@ -29,5 +32,4 @@ public class Equals implements IStackObject {
 		
 		return output;
 	}
-
 }

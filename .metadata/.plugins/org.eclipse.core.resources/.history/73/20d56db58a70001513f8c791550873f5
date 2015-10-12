@@ -2,8 +2,6 @@ package Functions;
 
 import java.util.ArrayList;
 
-import sharedMethods.Constants;
-
 import dataTypes.IDataType;
 
 public class Equals implements IStackObject {
@@ -15,16 +13,18 @@ public class Equals implements IStackObject {
 		ArrayList<String> evalParams = sharedMethods.Parse.evaluateParams(input);
 		if(evalParams.size() != 2)
 		{
+			System.out.println("Param count: " + evalParams.size());
+			System.out.println("First Param: " + evalParams.get(0));
 			//implement error stuff
 		}
 		
 		if(evalParams.get(0).equals(evalParams.get(1)))
 		{
-			output.add(Constants.TRUE);
+			output.add("true");
 		}
 		else
 		{
-			output.add(Constants.FALSE);
+			output.add("false");
 		}
 		
 		return output;

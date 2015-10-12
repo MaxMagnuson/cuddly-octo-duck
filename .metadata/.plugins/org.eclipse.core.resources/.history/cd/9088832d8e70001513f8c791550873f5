@@ -277,17 +277,4 @@ public class DataTypeTests {
 		
 		assertEquals(expected, result.get(0));	
 	}
-	
-	@Test
-	public void BooleanCombination()
-	{
-		String expected = "true";
-		String input = "(= (> 3000 1) (< (+ 2 2) (/ 48 4)))";
-		
-		
-		dataTypes.IDataType fun = new dataTypes.Function(input);
-		ArrayList<String> result = fun.evaluate();
-		
-		assertEquals(expected, result.get(0));	
-	}
 }

@@ -243,7 +243,7 @@ public class DataTypeTests {
 	public void LessThanNumbersTrue()
 	{
 		String expected = "true";
-		String input = "(< 100 101)";
+		String input = "(< 101 101)";
 		
 		
 		dataTypes.IDataType fun = new dataTypes.Function(input);
@@ -270,19 +270,6 @@ public class DataTypeTests {
 	{
 		String expected = "true";
 		String input = "(< (* 3 3) (+ 3 (* 33 115) 2))";
-		
-		
-		dataTypes.IDataType fun = new dataTypes.Function(input);
-		ArrayList<String> result = fun.evaluate();
-		
-		assertEquals(expected, result.get(0));	
-	}
-	
-	@Test
-	public void BooleanCombination()
-	{
-		String expected = "true";
-		String input = "(= (> 3000 1) (< (+ 2 2) (/ 48 4)))";
 		
 		
 		dataTypes.IDataType fun = new dataTypes.Function(input);

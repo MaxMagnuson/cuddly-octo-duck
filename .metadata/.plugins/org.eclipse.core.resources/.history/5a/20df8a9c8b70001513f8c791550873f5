@@ -24,7 +24,7 @@ public class Equals implements IStackObject {
 		}
 		else
 		{
-			output.add(Constants.FALSE);
+			output.add("false");
 		}
 		
 		return output;

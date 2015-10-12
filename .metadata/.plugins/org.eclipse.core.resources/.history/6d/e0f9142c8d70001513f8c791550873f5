@@ -112,7 +112,7 @@ public class Parse {
 		
 		while(tempParams.size() > 0)
 		{
-			IDataType tempData = tempParams.remove(0);
+			IDataType tempData = tempParams.remove(tempParams.size() - 1);
 			ArrayList<String> tempStrings = tempData.evaluate();
 			///////////////////////////////////////////////////////////////
 			//Does not currently handle collections returned from functions
@@ -126,7 +126,7 @@ public class Parse {
 					{
 						if(d.getType().equals("Function"))
 						{
-							tempParams.add(0, d);
+							tempParams.add(d);
 						}
 						else
 						{
